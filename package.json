@@ -1,0 +1,30 @@
+{
+  "name": "uridemo",
+  "version": "1.0.0",
+  "description": "This is part of the course on \"REST API Development\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajrin/URIDemo.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "architecture",
+    "constraints"
+  ],
+  "author": "acloudfan.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajrin/URIDemo/issues"
+  },
+  "homepage": "https://github.com/rajrin/URIDemo#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.3"
+  }
+}
