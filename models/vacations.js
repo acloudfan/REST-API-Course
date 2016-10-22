@@ -33,7 +33,9 @@ var VacationsSchema = settings.mongoose.Schema(
         // Till what date is the package valid
         validTill:{type:Date, required:true},
         // Package may get sold out
-        soldout: {type:Boolean, required:true, default:false}
+        soldout: {type:Boolean, required:true, default:false},
+        // Link to pictures
+        pictures:{type:string[]}
     }
 );
 
