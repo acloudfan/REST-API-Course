@@ -15,7 +15,7 @@ module.exports = function(router){
     // RETRIEVE all active vacation packages
     // Active = validTill >= Today's date
 
-    //    /v1/Vacations
+    //    /v1/vacations
     router.route(URI).get(function(req, res,next){
         console.log("GET Vacations")
         //1. Setup query riteria for the active pacakages
