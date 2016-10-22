@@ -15,7 +15,7 @@ module.exports = function(router){
     // RETRIEVE all active vacation packages
     // Active = validTill >= Today's date
 
-    //    /v1/vacations
+    //    /v1/Vacations
     router.route(URI).get(function(req, res,next){
         console.log("GET Vacations")
         //1. Setup query riteria for the active pacakages
@@ -49,7 +49,9 @@ module.exports = function(router){
         db.save(doc, function(err,saved){
             if(err){
                 // The returned error need to be defined better - in this example it is being left as is
-                res.status(400).send(err)
+
+
+                res.status(400).send("MY ERROR")
             } else {
                 res.send(saved)
             }
