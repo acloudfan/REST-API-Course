@@ -35,7 +35,7 @@ var VacationsSchema = settings.mongoose.Schema(
         // Package may get sold out
         soldout: {type:Boolean, required:true, default:false},
         // Link to pictures
-        pictures:{type:string[]}
+        pictures:{type:[String]}
     }
 );
 

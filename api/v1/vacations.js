@@ -51,12 +51,8 @@ module.exports = function (router) {
         db.save(doc, function (err, saved) {
             if (err) {
                 // The returned error need to be defined better - in this example it is being left as is
-<<<<<<< HEAD
                 var userError = processMongooseErrors(apiMessages.errors.API_MESSAGE_CREATE_FAILED, "POST", URI, err);
                 res.status(400).send(userError)
-=======
-                res.status(400).send("err")
->>>>>>> origin/master
             } else {
                 res.send(saved)
             }

@@ -11,7 +11,9 @@ exports.errors = {
         hints:["Please contact development team wit information on 'how to reproduce this error'. Thank you for your help and support."],
         info:"http://developer.acme.com/unknownerror"
     },
-    PACKAGE_ALREADY_EXISTS : {
+    PACKAGE_ALREADY_EXISTS : 
+    
+    {
         code:6000,
         text:"Vacation package with the provided 'code' already exist",
         hints:["Please use PUT for update instead of POST"],
@@ -25,14 +27,15 @@ exports.errors = {
         hints:["Please check that user has provided the non null value for 'name'"],
         info:"http://developer.acme.com/error#RequiredFields"
     },
-    MISSING_PACKAGE_DESCRIPTION : {
+    MISSING_PACKAGE_DESCRIPTION :  {
         code:7002,
-        text:"Required field vacation description is missing",
+        text:"Required field vacation 'description' is missing",
         hints:["Please check that user has provided the non null value for description"],
         info:"http://developer.acme.com/error#RequiredFields"
-    },
-    MISSING_PACKAGE_NUM_OF_NIGHTS : {
-        code:7002,
+    }  ,
+    MISSING_PACKAGE_NUM_OF_NIGHTS : 
+    {
+        code:7003,
         text:"Required field vacation 'number of nights' is missing",
         hints:["Please check that user has provided a number (between 1 & 31)"],
         info:"http://developer.acme.com/error#RequiredFields"
@@ -50,8 +53,8 @@ exports.errors = {
  * Generates the error to be sent back to the client
  */
 exports.create = function(message,httpMethod,endpointInformation,errorList,receivedPayload){
-    return {
-        // Meant for the developer - who can decide to expose it as is to the user
+    return    {
+        // Meant for the developer 
         text:message,
         timestamp:new Date(),
         // POST, GET ....
@@ -60,7 +63,8 @@ exports.create = function(message,httpMethod,endpointInformation,errorList,recei
         endpoint:endpointInformation,
         // An array of all errors
         errors : errorList,
-        // OPTIONAL - should be used only during development
+        // OPTIONAL - 
+        // Use only during development
         payload: receivedPayload
     }
 }
