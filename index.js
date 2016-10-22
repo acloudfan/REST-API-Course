@@ -1,7 +1,4 @@
-
-process.env.DB_URI = "" /** provide the url */
-process.env.DB_USER = "" /**provide the user id */
-process.env.DB_PASSWORD = "" /**provide the password */
+//missing creds
 
 var express = require('express')
 var bodyParser = require('body-parser')
