@@ -49,9 +49,7 @@ module.exports = function(router){
         db.save(doc, function(err,saved){
             if(err){
                 // The returned error need to be defined better - in this example it is being left as is
-
-
-                res.status(400).send("MY ERROR")
+                res.status(400).send("err")
             } else {
                 res.send(saved)
             }
