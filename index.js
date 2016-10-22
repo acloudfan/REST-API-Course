@@ -1,13 +1,13 @@
 
-process.env.DB_URI = "SET THIS TO DB URI"
-process.env.DB_USER = "SET THE DB USER"
-process.env.DB_PASSWORD = "SET THE DB PASSWORD" 
+process.env.DB_URI = "" /** provide the url */
+process.env.DB_USER = "" /**provide the user id */
+process.env.DB_PASSWORD = "" /**provide the password */
 
 var express = require('express')
 var bodyParser = require('body-parser')
 
 var router = express.Router();
-require('./api/v1/Vacations')(router);
+require('./api/v1/vacations')(router);
 
 // Create the express app
 app = express();

@@ -1,14 +1,15 @@
 /**
  * Simple tests for all DB tests
+ * 
+ * Adds the test data to the collection
  */
-//process.env.DB_URI = "mongodb://acloudfan:acloudfan@ds035766.mlab.com:35766/acmetravel" /**provide url**/
-process.env.DB_URI = "SET THIS TO DB URI"
-process.env.DB_USER = "SET THE DB USER"
-process.env.DB_PASSWORD = "SET THE DB PASSWORD" 
+process.env.DB_URI = "mongodb://ds059316.mlab.com:59316/acmetravel"
+process.env.DB_USER = "acloudfan"
+process.env.DB_PASSWORD = "acloudfan" 
 
 //Test#1  Insert the Vacation data
-var db = require('../db/Vacations')
-var data = require('../data/Vacations')
+var db = require('../db/vacations')
+var data = require('../data/vacations')
 
 
 // Save a single row

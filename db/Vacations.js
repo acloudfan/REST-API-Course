@@ -1,8 +1,8 @@
 /**
  * All database operations related to the vacations collection will reside in this file
  */
-var model = require('../models/Vacations')
-var settings = require('../db/Settings')
+var model = require('../models/vacations')
+var settings = require('../db/settings')
 
 // CREATE the vacation package
 exports.save = function (data, callback) {

@@ -2,18 +2,20 @@
  * Contains the definition of the API endpoints for vacation packages
  */
 // As a best practice keep the resource name same as the file name
-var RESOURCE_NAME = 'Vacations';
+var RESOURCE_NAME = 'vacations';
 var VERSION = 'v1';
 var URI = '/' + VERSION + '/' + RESOURCE_NAME; 
 
 // Setup the vacations db
-var db = require('../../db/Vacations')
+var db = require('../../db/vacations')
 
 module.exports = function(router){
     'use strict';
 
     // RETRIEVE all active vacation packages
     // Active = validTill >= Today's date
+
+    //    /v1/Vacations
     router.route(URI).get(function(req, res,next){
         console.log("GET Vacations")
         //1. Setup query riteria for the active pacakages

@@ -4,12 +4,12 @@
  * Model for the ACME vacation package.
  */
 
-var settings = require('../db/Settings')
+var settings = require('../db/settings')
 
 
 var VacationsSchema = settings.mongoose.Schema(
     {
-        // Name of the vacation package
+        // Name of the vacation package - BAHAMAS1000 - primary Key
         name: {type:String, required:[true,'name is needed']},
         description : {type:String, required:true},
         // ACME offers resorts & cruise vacation package
