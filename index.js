@@ -1,4 +1,4 @@
-process.env.DB_URI = "set this up
+process.env.DB_URI = "set this up"
 process.env.DB_USER = "set this up" /**provide the user id */
 process.env.DB_PASSWORD = "set this up" /**provide the password */
 
