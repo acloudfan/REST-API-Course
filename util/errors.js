@@ -11,11 +11,10 @@ exports.errors = {
         hints:["Please contact development team wit information on 'how to reproduce this error'. Thank you for your help and support."],
         info:"http://developer.acme.com/unknownerror"
     },
-    PACKAGE_ALREADY_EXISTS : 
-    
-    {
+
+    PACKAGE_ALREADY_EXISTS :{
         code:6000,
-        text:"Vacation package with the provided 'code' already exist",
+        text:"Vacation package with the provided 'name' already exist",
         hints:["Please use PUT for update instead of POST"],
         info:"http://developer.acme.com/errors#6000"
     },
@@ -42,7 +41,7 @@ exports.errors = {
     },
     // All format errors begin with 8
     FORMAT_NUM_OF_NIGHTS : {
-        code:8001,
+        code:7004,
         text:"Number of nights MUST be a number (between 1 & 31)",
         hints:["Please check that user has provided a numeric value for 'number of nights'"],
         info:"http://developer.acme.com/error#RequiredFields"
@@ -50,7 +49,8 @@ exports.errors = {
 }
 
 /**
- * Generates the error to be sent back to the client
+ * Utility methods
+ * Creates the error response body to be sent back to the caller
  */
 exports.create = function(message,httpMethod,endpointInformation,errorList,receivedPayload){
     return    {
@@ -63,12 +63,12 @@ exports.create = function(message,httpMethod,endpointInformation,errorList,recei
         endpoint:endpointInformation,
         // An array of all errors
         errors : errorList,
-        // OPTIONAL - 
-        // Use only during development
+        // OPTIONAL - Use only during development
         payload: receivedPayload
     }
 }
 
+// Mongoose validation error types
 exports.kinds = {
     REQUIRED:"required",
     NOT_VALID:"notvalid",

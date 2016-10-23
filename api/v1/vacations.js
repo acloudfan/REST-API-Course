@@ -50,8 +50,10 @@ module.exports = function (router) {
         //2. Call the insert method
         db.save(doc, function (err, saved) {
             if (err) {
-                // The returned error need to be defined better - in this example it is being left as is
-                var userError = processMongooseErrors(apiMessages.errors.API_MESSAGE_CREATE_FAILED, "POST", URI, err);
+                // Creates the error response
+                // EARLIER it was >>>  res.status(400).send("err")
+                var userError = processMongooseErrors(apiMessages.errors.API_MESSAGE_CREATE_FAILED, "POST", URI, err,{});
+                res.setHeader('content-type', 'application/json')
                 res.status(400).send(userError)
             } else {
                 res.send(saved)
@@ -63,7 +65,7 @@ module.exports = function (router) {
 /**
  * Converts the Mongoose validation errors to API specific errors
  */
-var processMongooseErrors = function (message, method, endpoint, err) {
+var processMongooseErrors = function (message, method, endpoint, err,payload) {
     var errorList = []
     // Check for validation error
     if (err.name === 'ValidationError'){
@@ -76,7 +78,7 @@ var processMongooseErrors = function (message, method, endpoint, err) {
         errUnknown.payload = err
         errorList = [apiErrors.errors.UNKNOWN_ERROR]
     }
-    return apiErrors.create(message, method, endpoint, errorList, err)
+    return apiErrors.create(message, method, endpoint, errorList, payload)
 }
 
 /**
@@ -87,7 +89,7 @@ var processValidationErrors = function (err) {
     // Check if there is an issue with the Num of Nights
     if (err.errors.numberOfNights) {
         if (err.errors.numberOfNights.kind === apiErrors.kinds.MIN_ERROR 
-        || err.errors.numberOfNights.kind  === apiErrors.kinds.MIN_MAX 
+        || err.errors.numberOfNights.kind  === apiErrors.kinds.MAX_ERROR 
         || err.errors.numberOfNights.kind === apiErrors.kinds.NUMBER_ERROR ) {
             errorList.push(apiErrors.errors.FORMAT_NUM_OF_NIGHTS)
         }
