@@ -16,8 +16,12 @@ module.exports = function(router){
         //1. Setup query riteria for the active pacakages
         var criteria = {}
 
-        //2. execute the query
-        db.select(criteria, function(err,docs){
+        //2. fields
+        var fieldsRequested = req.query.fields
+        var fields = createFields(fieldsRequested)
+
+        //3. execute the query
+        db.select(criteria, fields, function(err,docs){
            
             if(err){
                 console.log(err)
@@ -32,4 +36,18 @@ module.exports = function(router){
             }
         });
     });
+}
+
+// Utility function to create the JSON
+function createFields(str){
+    var arr = str.split(',')
+    str = '{'
+    for(var i=0; i < arr.length; i++){
+        str += '\"' + arr[i] + '\":1'
+        if(i < arr.length - 1) str += ","
+    }
+    str += '}'
+
+    console.log(str)
+    return JSON.parse(str)
 }

@@ -14,9 +14,16 @@ exports.saveMany = function (rows, callback) {
 }
 
 
-// RETRIEVE vacation packages based on criteria
-exports.select = function (criteria, callback) {
+// RETRIEVE hotels  based on criteria
+// exports.select = function (criteria, callback) {
+//     model.Hotels.find(criteria, function (err, data) {
+//         callback(err, data)
+//     })
+// }
+
+// RETRIEVE hotels packages based on criteria & fields
+exports.select = function (criteria,fields, callback) {
     model.Hotels.find(criteria, function (err, data) {
         callback(err, data)
-    })
+    }).select(fields)
 }
