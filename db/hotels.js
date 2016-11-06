@@ -18,9 +18,18 @@ exports.saveMany = function (rows, callback) {
 // https://docs.mongodb.com/manual/reference/method/db.collection.find/#find-projection
 // options = {
 //    fields: {/** Projection **/}
+//    pagination: {limit:5, offset:1}
 // }
 exports.select = function (criteria,options, callback) {
+
+    var lim = 0
+    var off = 0
+    if(options.pagination !== undefined){
+        if(options.pagination.limit !== undefined)  lim = parseInt(options.pagination.limit)
+        if(options.pagination.offset !== undefined)  off = parseInt(options.pagination.offset)
+    }
+
     model.Hotels.find(criteria, function (err, data) {
         callback(err, data)
-    }).select(options.fields)
+    }).select(options.fields).limit(lim).skip(off)
 }
