@@ -23,8 +23,8 @@ if (process.argv.length > 2 && process.argv[2] === 'insert') {
 
     // Select hotels with some criteria
     var selectCriteria = {}
-    var fields = {name:1,type:1,city:1}
-    db.select(selectCriteria, fields, function (err, data) {
+    var options = {fields:{name:1,type:1,city:1}}
+    db.select(selectCriteria, options, function (err, data) {
         if (err) {
             console.log("Failed to get vacations : %s", criteria)
             console.log(err)

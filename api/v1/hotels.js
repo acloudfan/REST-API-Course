@@ -13,15 +13,20 @@ module.exports = function(router){
 
     router.route(URI).get(function(req, res,next){
         console.log("GET Hotels")
-        //1. Setup query riteria for the active pacakages
-        var criteria = {}
+        
+        //1. fields
+        var fields ={}
+        if(req.query && req.query.fields !== undefined){
+           fields =  createFields(req.query.fields)
+        }
 
-        //2. fields
-        var fieldsRequested = req.query.fields
-        var fields = createFields(fieldsRequested)
+        //2. Setup options
+        var options = {fields:fields}
+        console.log(options)
 
         //3. execute the query
-        db.select(criteria, fields, function(err,docs){
+        var criteria = {}
+        db.select(criteria, options, function(err,docs){
            
             if(err){
                 console.log(err)
@@ -39,6 +44,8 @@ module.exports = function(router){
 }
 
 // Utility function to create the JSON
+// Simply parse the received fields and create a valid JSON object
+// {field1:1, field2:1 ....}
 function createFields(str){
     var arr = str.split(',')
     str = '{'
@@ -47,7 +54,5 @@ function createFields(str){
         if(i < arr.length - 1) str += ","
     }
     str += '}'
-
-    console.log(str)
     return JSON.parse(str)
 }

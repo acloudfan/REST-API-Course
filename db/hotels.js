@@ -14,16 +14,13 @@ exports.saveMany = function (rows, callback) {
 }
 
 
-// RETRIEVE hotels  based on criteria
-// exports.select = function (criteria, callback) {
-//     model.Hotels.find(criteria, function (err, data) {
-//         callback(err, data)
-//     })
-// }
-
 // RETRIEVE hotels packages based on criteria & fields
-exports.select = function (criteria,fields, callback) {
+// https://docs.mongodb.com/manual/reference/method/db.collection.find/#find-projection
+// options = {
+//    fields: {/** Projection **/}
+// }
+exports.select = function (criteria,options, callback) {
     model.Hotels.find(criteria, function (err, data) {
         callback(err, data)
-    }).select(fields)
+    }).select(options.fields)
 }
