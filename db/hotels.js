@@ -22,6 +22,7 @@ exports.saveMany = function (rows, callback) {
 // }
 exports.select = function (criteria,options, callback) {
 
+    // Local variable for capturing limit & offset
     var lim = 0
     var off = 0
     if(options.pagination !== undefined){
