@@ -1,6 +1,6 @@
 process.env.DB_URI = "mongodb://ds059316.mlab.com:59316/acmetravel"
-process.env.DB_USER = "acloudfan"
-process.env.DB_PASSWORD = "acloudfan"
+process.env.DB_USER = "***"
+process.env.DB_PASSWORD = "***"
 
 var express = require('express')
 var bodyParser = require('body-parser')
