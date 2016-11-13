@@ -1,6 +1,6 @@
-process.env.DB_URI = "set this up"
-process.env.DB_USER = "set this up" /**provide the user id */
-process.env.DB_PASSWORD = "set this up" /**provide the password */
+process.env.DB_URI = "***" /** provide the URL to mongodb */
+process.env.DB_USER = "***" /**provide the user id */
+process.env.DB_PASSWORD = "***" /**provide the password */
 
 var express = require('express')
 var bodyParser = require('body-parser')
