@@ -1,6 +1,9 @@
 Created as part of the course on "REST API". 
 Demonstrates the setting up of URI for the REST API
 
+http://www.acloudfan.com/learn-REST-API
+
+
 Following node practices defined here:
 https://github.com/felixge/node-style-guide
 https://blog.risingstack.com/node-js-best-practices/
