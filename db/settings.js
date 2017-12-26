@@ -3,15 +3,19 @@
  */
 
 var mongoose = require('mongoose')
-// Added the following line if you get the Mongoose/Promise deprecation warning
-//mongoose.Promise = global.Promise;
+// This would make mongoose use native Promises
+mongoose.Promise = global.Promise;
 
 // This environment property is used for getting the URI for MongoDB
+// 'mongodb://<user>:<password>@ds163387.mlab.com:63387/acme123'
 var uri = process.env.DB_URI
 
-// Connect
-var options = {user:process.env.DB_USER, pass:process.env.DB_PASSWORD}
-mongoose.connect(uri,options)
+// No need to provid ethe user /password separately its part of the URI
+// var options = {user:process.env.DB_USER, pass:process.env.DB_PASSWORD}
+
+mongoose.connect(process.env.DB_URI, {
+    useMongoClient: true
+  });
 
 // Setup event listeners for the mongoose connections
 mongoose.connection.on('error', function(err){
