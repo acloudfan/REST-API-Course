@@ -27,7 +27,7 @@ mongodb://<user>:<password>@SERVER:PORT/DB-NAME
           body-parser
           mongoose
 
-4. 
+
 
 Create from scratch
 ===================
