@@ -24,9 +24,9 @@ exports.SingleRow = {
     "offer": {
         "discount": 0.1,
         "description": "End of year sale",
-        "expires": "12/31/2016"
+        "expires": "1/31/2020"
     },
-    "validTill": "1/31/2017",
+    "validTill": "1/31/2020",
     "soldout": false
 }
 
@@ -56,9 +56,9 @@ exports.MultipleRows = [
     "offer": {
         "discount": 0.25,
         "description": "End of year sale",
-        "expires": "2/31/2017"
+        "expires": "1/31/2020"
     },
-    "validTill": "1/31/2017",
+    "validTill": "1/31/2020",
     "soldout": false
 
 },
@@ -91,9 +91,9 @@ exports.MultipleRows = [
     "offer": {
         "discount": 0.25,
         "description": "End of year sale",
-        "expires": "2/31/2017"
+        "expires": "1/31/2020"
     },
-    "validTill": "1/31/2017",
+    "validTill": "1/31/2020",
     "soldout": false
 
 }]
