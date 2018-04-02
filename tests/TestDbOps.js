@@ -3,12 +3,15 @@
  * 
  * Adds the test data to the collection
  */
-// Provide the URI in the right format
-process.env.DB_URI = "mongodb://<user>:<password>@SERVER:PORT/DB-NAME"
 
 
+// This is the old way which is not accepted by API anymore
+// This is what you have seen in he video - please use the process.env.DB_URI
 //process.env.DB_USER = "test";//
 //process.env.DB_PASSWORD = "test";//acloudfan" 
+
+// Provide the URI in the right format
+process.env.DB_URI = "mongodb://<user>:<password>@SERVER:PORT/DB-NAME"
 
 //Test#1  Insert the Vacation data
 var db = require('../db/vacations')
