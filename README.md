@@ -1,5 +1,12 @@
-Created as part of the course on "REST API". 
+# RETIRED - please DO NOT Use
+# Instead use the repository below
+https://github.com/acloudfan/REST-API-Course-V2
 
+Checkout the course on UDEMY:
+https://www.udemy.com/course/rest-api/?referralCode=ADE763DAA790A3F0D211
+
+
+Created as part of the course on "REST API". 
 Demonstrates the setting up of URI for the REST API
 
 http://www.acloudfan.com/learn-REST-API
